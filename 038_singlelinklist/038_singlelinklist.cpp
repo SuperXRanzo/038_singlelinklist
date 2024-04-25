@@ -1,4 +1,4 @@
-#include <iostream> 
+#include <iostream>
 using namespace std;
 
 struct Node {
@@ -13,7 +13,7 @@ void addNode() {
 	int nim;
 	string nama;
 	Node* nodeBaru = new Node();
-	cout << "Masukkan NIM: ";
+	cout << "Masukan NIM: ";
 	cin >> nim;
 	cout << "Masukan Nama: ";
 	cin >> nama;
@@ -26,6 +26,7 @@ void addNode() {
 			cout << "NIM sudah ada" << endl;
 			return;
 		}
+
 		nodeBaru->next = START;
 		START = nodeBaru;
 		return;
@@ -164,3 +165,28 @@ int main() {
 				cin >> nim;
 				if (deleteNode(nim)) {
 					cout << "nim: " << nim << " berhasil dihapus" << endl;
+					system("pause");
+					system("cls");
+				}
+				else
+					cout << "Data tidak ditemukan" << endl;
+				break;
+			case 3:
+				traverse();
+				break;
+			case 4:
+				searchData();
+				break;
+			case 5:
+				break;
+			default:
+				cout << "Pilihan tidak ada" << endl;
+				break;
+			}
+		}
+		catch (exception e)
+		{
+			cout << "Terjadi Kesalahan" << endl;
+		}
+	} while (pilihan != 5);
+}
